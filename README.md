@@ -8,11 +8,11 @@
 ## Project Motivation
 - Advances in CGI software and AI are creating increasingly realistic images
 - In an experiment on 200 participants, they could only differentiate AI generated images from real images 48.2% of the time.
-- We have decided to focus our project on images of human faces because we believe that this is where the greatest potential for abuse lies
+- We have decided to focus our project on images of human faces because we believe that this is where the greatest potential for abuse lies  
   <img width="485" alt="image" src="https://user-images.githubusercontent.com/53804726/175858128-57698368-6105-4fe8-a83c-5c209697a506.png">
 
 ## Related works
-- Wu et al., used histograms of the difference images (i.e. the images composed of differences of adjacent pixels) and afterwards takes the most informative histograms as features. 
+- Wu et al., used histograms of the difference images (i.e. the images composed of differences of adjacent pixels) and afterwards takes the most informative histograms as features.   
   <img width="198" alt="image" src="https://user-images.githubusercontent.com/53804726/175858213-f1634780-4f32-48a1-b704-a65cc99d1687.png">
 
 - Rahmouni et al. uses histograms to a CNN framework and finds the best features for efficient boundary
@@ -21,7 +21,7 @@
 
 ## Data collection
 - We created our own scraper to scrape Google Images
-- Made use of Selenium and Requests libraries
+- Made use of Selenium and Requests libraries  
   <img width="229" alt="image" src="https://user-images.githubusercontent.com/53804726/175858326-e3925c08-8847-487a-9fb7-40fbdd974d81.png">
 - Using just "CGI faces" and "photos of faces" as search queries would have been too broad and resulted in a lot of noise in the dataset.
 - We had to find a way to segment the search queries
@@ -48,18 +48,45 @@
 ## Data analysis with deep learning
 ### 1. Logistic Regression
 - benchmark for all the other more complex CNN models
-- one single linear layer
+- one single linear layer  
   <img width="1046" alt="image" src="https://user-images.githubusercontent.com/53804726/175858668-79b228f7-047a-403d-a151-75056bf0d2d5.png">
 
-## 2. AlexNet
+### 2. AlexNet
 - five convolutional layers + three fully-connected layers.
-- Overfitting problem
+- Overfitting problem  
   <img width="1016" alt="image" src="https://user-images.githubusercontent.com/53804726/175858768-040467bb-f2d5-4c4b-9f70-5ace0373599f.png">
 
+### 3. LeNet
+- two sets of convolutional and average pooling layers
+- flattening convolutional layer
+- two fully-connected layers
+- softmax classifier  
+  <img width="1150" alt="image" src="https://user-images.githubusercontent.com/53804726/175858919-59937e1b-7de9-4156-bb32-fdfd0850b10f.png">
+
+### 4. VGGNet (final model)
+Our project uses a similar structure as the VGGNet  
+  <img width="429" alt="image" src="https://user-images.githubusercontent.com/53804726/175858978-156334fc-cde5-44d0-b16e-135626a39858.png">
+
+Our model consists of:
+- 5 convolutional layers
+- 4 max pooling layers
+- 3 dropout layers
+- 3 linear layers  
+<img width="351" alt="image" src="https://user-images.githubusercontent.com/53804726/175859017-b8160e01-763a-4c99-97e7-d227808b618f.png">
 
 
+## Numerical Results
+### Explanation of model architecture
+- Similar but smaller architecture as VGGNet
+- Not using a full VGG model
+  - overfitting problems
+  - take longer time to train.
 
-
+A relatively deeper network:
+improve generalizability
+break down the connects 
+model more relationships
+larger receptive field.
 
 
 
