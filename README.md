@@ -83,16 +83,45 @@ Our model consists of:
   - take longer time to train.
 
 A relatively deeper network:
-improve generalizability
-break down the connects 
-model more relationships
-larger receptive field.
+- improve generalizability
+- break down the connects 
+- model more relationships
+- larger receptive field.
+
+### Explanation of model architecture
+- 3 x 3 filters
+- Why use such a small filter? instead of 7 x 7 filter 
+- Allows for three non-linear rectification layers instead of a single one, which makes the decision function more discriminative.
 
 
+### Comparison with existing models
+#### Logistic Regression
+- too simple to extract useful features
+- deals with continuous values
+#### LeNet
+- does not do as well with color images
+- not able to scan for all features thus producing poor performing models
+- difficult for the model to generalize and create an accurate model.
+#### AlexNet
+- AlexNet uses ReLU activation function 
+- applies max pooling instead of average pooling
+- has overlapping pooling filters to reduce the size of the network
+- Dropout layers to improve generalization and reduce overfitting
 
+### Limitations of our work 
+- Size of dataset 
+- Lack of standardized dataset 
+- Size of images 
+- Sobel detection does not work on some input images
 
+### Future Work
+Problem with CNNs:
+- Designed specifically for images 
+- Can be computationally expensive
+- Instead of CNNs, researchers at Google have proposed using Vision Transformers instead   
 
-
+<img width="345" alt="image" src="https://user-images.githubusercontent.com/53804726/175860256-947da3bb-562d-4091-bc1d-c5009ae2edab.png">
+<img width="163" alt="image" src="https://user-images.githubusercontent.com/53804726/175860265-849051fa-43c7-4a58-8dad-b59c92e95ccc.png">
 
 
 
